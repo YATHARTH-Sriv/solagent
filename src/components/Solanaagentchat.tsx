@@ -311,7 +311,7 @@ export default function SolanaAgentChat() {
     updateDateTime()
     const interval = setInterval(updateDateTime, 60000)
     return () => clearInterval(interval)
-  }, [])
+  })
 
   // Handle Enter key
   useEffect(() => {
