@@ -80,9 +80,12 @@ export default function SolanaAgentChat() {
 
   // Interactive keyboard shortcut handling
   useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      // Add custom keyboard shortcuts here if needed
-    };
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Enter' && event.ctrlKey) {
+        event.preventDefault()
+        handleSubmit('Sample query') // Replace with actual input value
+      }
+    }
 
     document.addEventListener('keydown', handleKeyDown);
     return () => document.removeEventListener('keydown', handleKeyDown);
